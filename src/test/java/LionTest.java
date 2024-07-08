@@ -39,4 +39,11 @@ public class LionTest {
         boolean actualHasMane = lion.doesHaveMane();
         assertEquals(expectedHasMane, actualHasMane);
     }
+
+    @Test
+    public void getFoodTest() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        lion.getFood();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
+    }
 }
